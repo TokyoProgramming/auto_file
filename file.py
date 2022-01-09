@@ -4,10 +4,21 @@ import shutil
 
 path, dirs, files = next(os.walk('/Users/tokyo/Downloads'))
 
+
 img_extensions = ['.jpeg', '.jpg', '.png', 'gif', '.tiff']
 document_extensions = ['.pdf', '.doc', 'docx', '.txt', '.xml']
 software_extensions = ['.exe']
 zip_extensions = ['.zip']
+
+folders = ['documents', 'images', 'others', 'python', 'softwares', 'zip']
+for dir in dirs:
+    if dir in folders:
+        pass
+    else:
+        current_path = path + '/' + dir
+
+        new_path = path + '/' + 'softwares' + '/' + dir
+        shutil.move(current_path, new_path)
 
 
 for file in files:
