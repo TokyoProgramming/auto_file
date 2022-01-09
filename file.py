@@ -37,6 +37,8 @@ for file in files:
     elif file_extension in img_extensions:
         print('image')
         new_path = path + '/' + 'images' + '/' + file
+    else:
+        new_path = path + '/' + 'others' + '/' + file
 
     if new_path != '':
         os.replace(current_path, new_path)
