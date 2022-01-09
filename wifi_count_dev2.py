@@ -34,14 +34,16 @@ if functools.reduce(lambda x, y: x and y, map(lambda p, q: p == q, test_list, da
     print("The lists l1 and l2 are the same")
 
 
-# request = scapy.ARP()
+request = scapy.ARP()
 
-# request.pdst = '192.168.0.1/24'
-# broadcast = scapy.Ether()
+request.pdst = '192.168.0.1/24'
+broadcast = scapy.Ether()
 
-# broadcast.dst = 'ff:ff:ff:ff:ff:ff'
+broadcast.dst = 'ff:ff:ff:ff:ff:ff'
 
-# request_broadcast = broadcast / request
-# clients = scapy.srp(request_broadcast, timeout=10, verbose=1)[0]
-# for element in clients:
-#     get_device_data = [element[1].psrc, element[1].hwsrc]
+request_broadcast = broadcast / request
+clients = scapy.srp(request_broadcast, timeout=10, verbose=1)[0]
+for element in clients:
+    get_device_data = [element[1].psrc, element[1].hwsrc]
+
+    print(get_device_data)
