@@ -28,6 +28,7 @@ for file in files:
     current_path = path + '/' + file
     new_path = ''
     if file_extension == '.py':
+        P
         print('python file')
         current_name = file
         new_name = 'new_name1'
