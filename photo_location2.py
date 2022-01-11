@@ -22,3 +22,4 @@ def getImageData(image):
 
 getImageData('image1.jpg')
 getImageData('image2.jpg')
+getImageData('image3.jpg')
