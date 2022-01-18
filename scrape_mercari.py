@@ -16,7 +16,16 @@ CHROMEDRIVER = Service("C:/Users/tokyo/Downloads/softwares/chromedriver_win32/ch
 
 driver = webdriver.Chrome(service= CHROMEDRIVER)
 driver.get('https://jp.mercari.com/item/m84680014499')
-time.sleep(8)
+time.sleep(10)
+
+html = driver.page_source
+soup = BeautifulSoup(html, 'lxml')
+
+print(soup)
+
+
+
+
 
 time.sleep(5)
 driver.close()
