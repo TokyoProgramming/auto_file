@@ -20,7 +20,10 @@ for dir in dirs:
         current_path = path + '/' + dir
 
         new_path = path + '/' + 'softwares' + '/' + dir
-        shutil.move(current_path, new_path)
+        if os.path.exists(new_path):
+            shutil.rmtree(current_path)
+        else:
+            shutil.move(current_path, new_path)
 
 
 for file in files:
@@ -60,4 +63,7 @@ for file in files:
     
 
     if new_path != '':
-        os.replace(current_path, new_path)
+        if os.path.exists(new_path):
+            os.remove(current_path)
+        else:
+            os.replace(current_path, new_path)
